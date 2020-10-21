@@ -1,5 +1,5 @@
 # Spring PetClinic Sample Application
-![docker](https://github.com/sbarraarias/spring-petclinic/wofklows/docker/badge.svg)
+[!docker](https://github.com/sbarraarias/spring-petclinic/wofklows/docker/badge.svg)
 
 ## Understanding the Spring Petclinic application with a few diagrams
 <a href="https://speakerdeck.com/michaelisvy/spring-petclinic-sample-application">See the presentation here</a>
