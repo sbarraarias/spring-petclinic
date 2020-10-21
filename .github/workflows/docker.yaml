@@ -13,7 +13,7 @@ jobs:
       -
         name: build and test
         run: |
-          docker build -t sbarraarias/spring-petclinic:testing --no-chache .
+          docker build -t sbarraarias/spring-petclinic:testing --no-cache .
           docker run -d -p 80:8080 sbarraarias/spring-petclinic:testing
           while true
             do
