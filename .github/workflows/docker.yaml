@@ -6,27 +6,27 @@ on:
     jobs:
       test:
         runs-on: ubuntu-18.0.4
-          steps: 
-            - 
-              name: checkout
-              uses: actions/checkout@v2
-            -
-              name: build and test
-              run: |
-                docker build -t sbarraarias/spring-petclinic:testing --no-chache .
-                docker run -d -p 80:8080 sbarraarias/spring-petclinic:testing
-                while true
-                  do
-                    sleep 1
-                    docker ps | grep Up && break
-                  done
-                while true
-                  do
-                    sleep 1
-                    docker ps | grep java && break
-                  done
-                while true
-                  do
-                    sleep 1
-                    curl localhost -I | grep 200 && break
-                  done
+        steps: 
+          - 
+            name: checkout
+            uses: actions/checkout@v2
+          -
+            name: build and test
+            run: |
+              docker build -t sbarraarias/spring-petclinic:testing --no-chache .
+              docker run -d -p 80:8080 sbarraarias/spring-petclinic:testing
+              while true
+                do
+                  sleep 1
+                  docker ps | grep Up && break
+                done
+              while true
+                do
+                  sleep 1
+                  docker ps | grep java && break
+                done
+              while true
+                do
+                  sleep 1
+                  curl localhost -I | grep 200 && break
+                done
