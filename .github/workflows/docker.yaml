@@ -1,0 +1,32 @@
+name: docker
+on:
+  push:
+    branches:
+      - dev-sbarra
+    jobs:
+      test:
+        runs-on: ubuntu-18.0.4
+          steps: 
+            - 
+              name: checkout
+              uses: actions/checkout@v2
+            -
+              name: build and test
+              run: |
+                docker build -t openshift-academia-online/spring-petclinic:testing --no-chache .
+                docker run -d -p 80:8080 openshift-academia-online/spring-petclinic:testing
+                while true
+                  do
+                    sleep 1
+                    docker ps | grep Up && break
+                  done
+                while true
+                  do
+                    sleep 1
+                    docker ps | grep java && break
+                  done
+                while true
+                  do
+                    sleep 1
+                    curl localhost -I | grep 200 && break
+                  done
