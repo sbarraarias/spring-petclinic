@@ -1,6 +1,6 @@
 FROM alpine/git
 WORKDIR /clone
-RUN git clone https://github.com/openshift-academia-online/spring-petclinic --single-branch -b dev-sbarra
+RUN git clone https://github.com/sbarraarias/spring-petclinic --single-branch -b dev-sbarra
 
 FROM maven:alpine
 WORKDIR /build
